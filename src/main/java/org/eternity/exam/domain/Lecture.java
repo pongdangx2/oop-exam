@@ -1,4 +1,4 @@
-package org.eternity.exam;
+package org.eternity.exam.domain;
 
 import java.time.LocalDate;
 
@@ -11,6 +11,10 @@ public class Lecture {
         this.title = title;
         this.date = date;
         this.days = days;
+    }
+
+    public String getReportContent(LectureReportFormatPolicy reportFormatPolicy) throws Exception {
+        return reportFormatPolicy.getReportContent(this);
     }
 
     public String getTitle() {
